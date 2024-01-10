@@ -22,9 +22,16 @@ function argument
 // }
 // console.log(multiply(4, 7)) 
 // console.log(multiply('raihan', 8)) /* no error */
-/*  */
-function multiplyWithImplicitTypes(a, b) {
-    return a * b;
-}
-console.log(multiplyWithImplicitTypes(56, 78));
-console.log(multiplyWithImplicitTypes("raihan", 78));
+/* this function is working like typescript function because
+it has implicit data types in its arguments */
+// function multiplyWithImplicitTypes(a : number, b : number){
+//     return a * b
+// }
+// console.log(multiplyWithImplicitTypes(56, 78))
+// console.log(multiplyWithImplicitTypes("raihan", 78)) /* typescript error will show */
+// let oneDataTypeArray = [ 'raihan', 'joson']
+// oneDataTypeArray.push('kaled')
+// oneDataTypeArray.push(55) /* typescript error because the assigned with string at the first time */
+// let mixedDataTypesArray = [55, 'hi', false, {}]
+// mixedDataTypesArray.push(56)
+// mixedDataTypesArray.push('raihan') /* this will not trow an error because its typed with mixed data types */
