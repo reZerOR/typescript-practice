@@ -80,3 +80,13 @@ ObjectScema = {
 //     age: 85,
 //     adult: 'yes' /* error cause this not assigned data types */
 // }
+
+// any type (not recomended)
+let implicitAnyType;
+let exlicitAnyType: any;
+let exlicitAnyTypeArray : any[] = []
+let exlicitAnyTypeObject:{
+    name: any,
+    id: any
+}
+
