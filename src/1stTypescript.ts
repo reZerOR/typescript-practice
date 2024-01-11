@@ -46,7 +46,37 @@ let DataType : number;
 DataType = 77
 // DataType = 'hi iam' /* this will give you error because its datatype is number */
 
+// union type
 let mixedDataType : number | string;
 mixedDataType = 77
 mixedDataType = 'raihan'
 // mixedDataType = true /* this will give you error cause its datatype is number and string */
+
+let DataTypeArray : number[] = []
+DataTypeArray.push(77)
+// DataTypeArray.push('apple')/* this will give you error cause the array stores number types data */
+
+// union type
+let twoDataTypesArray : (number | string)[] =[]
+twoDataTypesArray.push(77)
+twoDataTypesArray.push('cat')
+// twoDataTypesArray.push(true) /* error cause the array stores number and string type data */
+
+// object scema
+let ObjectScema: {
+    name: string,
+    age: number,
+    adult: boolean
+}
+
+ObjectScema = {
+    name: 'raihan',
+    age: 85,
+    adult: true
+}
+
+// ObjectScema = {
+//     name: 'raihan',
+//     age: 85,
+//     adult: 'yes' /* error cause this not assigned data types */
+// }
