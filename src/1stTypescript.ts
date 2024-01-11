@@ -41,3 +41,12 @@ it has implicit data types in its arguments */
 // let mixedDataTypesArray = [55, 'hi', false, {}]
 // mixedDataTypesArray.push(56)
 // mixedDataTypesArray.push('raihan') /* this will not trow an error because its typed with mixed data types */
+
+let DataType : number;
+DataType = 77
+// DataType = 'hi iam' /* this will give you error because its datatype is number */
+
+let mixedDataType : number | string;
+mixedDataType = 77
+mixedDataType = 'raihan'
+// mixedDataType = true /* this will give you error cause its datatype is number and string */
