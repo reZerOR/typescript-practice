@@ -38,5 +38,28 @@ const user: {
   firstName: "jorge",
   lastName: "boosh",
   isMarried: false,
-  phoneNumber: "+1234567890"
+  phoneNumber: "+1234567890",
 };
+
+// normal function
+//arrow function
+
+function add(num1: number, num2: number = 10): number {
+  return num1 + num2;
+}
+
+const addArrow = (num1: number, num2: number): number => num1 + num2;
+
+// object --> function --> method
+const poorMe = {
+  name: "rik",
+  balance: 0,
+  addBalance(balance: number): string {
+    return `My new balance is: ${this.balance + balance}`;
+  },
+};
+
+const arr: number[] = [1, 4, 10];
+const newArrayWithMap: number[] = arr.map(
+  (elem: number): number => elem * elem
+);
