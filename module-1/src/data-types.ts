@@ -101,8 +101,52 @@ const add2: Add = (num1, num2) => num1 + num2;
 type Frontend = "fakabaz" | "balo";
 type Backend = "bari fakabaz" | "balo";
 
-type Fullstack = Frontend & Backend;
-type Allstack = Frontend | Backend;
+type Fullstack = Frontend & Backend; //value will be common set of every type
+type Allstack = Frontend | Backend; //value will be every set of every type
 
 const Developer1: Fullstack = "balo";
 const Developer2: Allstack = "bari fakabaz";
+
+// ternary, optiona chaining & nullish coalescing oparator
+
+const age: number = 18;
+
+const isAdult = age >= 18 ? "Adult" : "not Adult";
+// console.log({isAdult});
+
+// nullish coalescing operator
+// null / undifiend --> decision making
+  
+const isAuthenticated = null
+
+const whoIsIt = isAuthenticated ?? "Guest" //nullish coalescing operator
+
+// optional chaining 
+
+type User1 = {
+  name: string,
+  address: {
+    city: string,
+    road: string,
+    presentAddress: string,
+    PermanentAddress?: string
+  }
+}
+
+const user1: User1 = {
+  name: "who knows",
+  address: {
+    city: "tokyo",
+    road: "4no",
+    presentAddress: "back alley home"
+  }
+}
+
+const PermanentAddress1 = user1?.address?.PermanentAddress ?? "Not found" //nullish coalescing operator
+const PermanentAddress2 = user1?.address?.PermanentAddress || "Not found" //logical or oparator
+
+console.log({PermanentAddress1, PermanentAddress2});
+
+
+
+
