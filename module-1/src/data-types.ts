@@ -64,36 +64,45 @@ const newArrayWithMap: number[] = arr.map(
   (elem: number): number => elem * elem
 );
 
-
 // type alias
 
 type Student = {
-    name: string,
-    age: number,
-    gender: "male" | "female",
-    address: string,
-    contactNo?: string
-}
+  name: string;
+  age: number;
+  gender: "male" | "female";
+  address: string;
+  contactNo?: string;
+};
 
 const srudent1: Student = {
-    name: 'kayo',
-    age: 90,
-    gender: "male",
-    address: "yuil", 
-}
+  name: "kayo",
+  age: 90,
+  gender: "male",
+  address: "yuil",
+};
 const srudent2: Student = {
-    name: 'kayo',
-    age: 90,
-    gender: "male",
-    address: "yuil", 
-    contactNo: "92340238402384"
-}
+  name: "kayo",
+  age: 90,
+  gender: "male",
+  address: "yuil",
+  contactNo: "92340238402384",
+};
 
+type UserName = string;
+type IsAdmin = boolean;
+const userName: UserName = "persin";
+const is1Admin: IsAdmin = false;
 
-type UserName = string
-type IsAdmin = boolean
-const userName: UserName = 'persin'
-const is1Admin: IsAdmin = false
+type Add = (num1: number, num2: number) => number;
+const add2: Add = (num1, num2) => num1 + num2;
 
-type Add = (num1: number, num2: number) => number
-const add2: Add = (num1, num2) => num1+num2
+// union types and intersection types
+
+type Frontend = "fakabaz" | "balo";
+type Backend = "bari fakabaz" | "balo";
+
+type Fullstack = Frontend & Backend;
+type Allstack = Frontend | Backend;
+
+const Developer1: Fullstack = "balo";
+const Developer2: Allstack = "bari fakabaz";
