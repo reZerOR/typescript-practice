@@ -162,4 +162,35 @@ try{}catch(error){
   console.log((error as CustomError).message)
 }
 
+// interface 
+type User2 = {
+  name: string,
+  age: number
+}
 
+interface User3 {
+  name: string,
+  age: number
+}
+
+type NewUser2 = User2 & {role: string}
+interface NewUser3 extends User3 {
+  role: string
+}
+
+// declearing array types with interface
+type Roll1 = number[]
+interface Roll2 {
+  [index: number]:number
+}
+const RollNumber: Roll2 = [0,1,3]
+
+// declearing function types with interface
+
+interface Add2{
+  (num1: number, num2: number): number
+}
+
+const add3: Add2 = (num1, num2)=>num1+num2
+//use type alias for every thing either than obejcts 
+//use interface for objects
