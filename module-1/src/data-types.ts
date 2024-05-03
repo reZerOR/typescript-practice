@@ -194,3 +194,25 @@ interface Add2{
 const add3: Add2 = (num1, num2)=>num1+num2
 //use type alias for every thing either than obejcts 
 //use interface for objects
+
+//generic types
+type GenericArray<T> = Array<T>
+
+// const rollNumber2: number[] = [1,2,3]
+const rollNumber2: Array<number> = [1,2,3]
+const rollNumber3: GenericArray<number> = [1,2,3]
+
+// const mentors: string[] = ["x", "y", "u"]
+const mentors: Array<string> = ["x", "y", "u"]
+const mentors1: GenericArray<string> = ["x", "y", "u"]
+
+// const boolArray: boolean[] = [true, false, true]
+const boolArray: Array<boolean> = [true, false, true]
+const boolArray1: GenericArray<boolean> = [true, false, true]
+
+const newuser4: GenericArray<User3>=[
+  {
+    name: 'string',
+    age: 89
+  },
+]
