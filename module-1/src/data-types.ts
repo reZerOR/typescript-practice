@@ -147,6 +147,19 @@ const PermanentAddress2 = user1?.address?.PermanentAddress || "Not found" //logi
 
 console.log({PermanentAddress1, PermanentAddress2});
 
+//type assertion 
 
+let anything: any;
+
+anything = "weoeuadfajfe";
+
+(anything as string)
+
+type CustomError = {
+  message: string
+}
+try{}catch(error){
+  console.log((error as CustomError).message)
+}
 
 
