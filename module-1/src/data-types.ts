@@ -255,3 +255,10 @@ const richDeveloper: Developer3<{ brand: string; model: string, releaseYear: str
     releaseYear: "34415"
   },
 };
+//generic type function
+
+const createArrayGeneric = <T>(pram: T): T[]=>{
+  return [pram]
+}
+
+const resGeneric = createArrayGeneric<string>("hello")
