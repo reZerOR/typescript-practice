@@ -281,56 +281,90 @@ const addCourseToStudent = <
   };
 };
 
-const student3 = addCourseToStudent({id: 2304, name: "jani na", email: "x@y.com", money: 8960})
+const student3 = addCourseToStudent({
+  id: 2304,
+  name: "jani na",
+  email: "x@y.com",
+  money: 8960,
+});
 
 //generic constraint with keyof operator
 
 type Vehicle = {
-  bike: string,
-  car: string,
-  ship: string
-}
+  bike: string;
+  car: string;
+  ship: string;
+};
 
-type Owner = "bike" | "car" | "ship";//manually key written
-type Owner1 = keyof Vehicle//dynamicaly key written
+type Owner = "bike" | "car" | "ship"; //manually key written
+type Owner1 = keyof Vehicle; //dynamicaly key written
 
 //in function typeof
-const getPropertyValue = <X, Y extends keyof X>(obj:X, key:Y)=>{
-  return obj[key]
-}
+const getPropertyValue = <X, Y extends keyof X>(obj: X, key: Y) => {
+  return obj[key];
+};
 
-const result = getPropertyValue(student3, "money")
+const result = getPropertyValue(student3, "money");
 
 //async typscript
 
-type Todo={
-  "userId": number,
-  "id": number,
-  "title": string,
-  "completed": string
-}
-const getTodo = async (): Promise<Todo> =>{
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-  const result: Todo = await res.json()
-  return result
-}
+type Todo = {
+  userId: number;
+  id: number;
+  title: string;
+  completed: string;
+};
+const getTodo = async (): Promise<Todo> => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const result: Todo = await res.json();
+  return result;
+};
 
 //conditional types
 
-type CheckVehicle<T> = T extends keyof Vehicle ? true : false
+type CheckVehicle<T> = T extends keyof Vehicle ? true : false;
 
-type HasPlan = CheckVehicle<"plain">
+type HasPlan = CheckVehicle<"plain">;
 
-//mapped types 
+//mapped types
 
-type ArrayofSomething<T>= {
-  [key in keyof T]:T[key]
-}
+type ArrayofSomething<T> = {
+  [key in keyof T]: T[key];
+};
 
 const something: ArrayofSomething<Todo> = {
   userId: 234234,
   id: 23424,
   title: "something",
-  completed: "dont know"
-}
+  completed: "dont know",
+};
 
+//utility types
+type Person = {
+  name: string;
+  age: number;
+  email?: string;
+  contactNo: string;
+};
+
+// pick
+type NameAge = Pick<Person, "name"|"age">
+
+// omit
+type Contact = Omit<Person, "name"|"age">
+
+//required 
+type PersonRequired = Required<Person>
+
+// partial
+type PertialPerson = Partial<Person>
+
+//readonly
+type ReadonlyPerson = Readonly<Person>
+
+//record
+type MyObj = Record<string, string>
+const obj1 : MyObj = {
+  r: "ower",
+  y: "oqfa"
+}
