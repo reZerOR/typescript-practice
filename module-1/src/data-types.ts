@@ -282,5 +282,55 @@ const addCourseToStudent = <
 };
 
 const student3 = addCourseToStudent({id: 2304, name: "jani na", email: "x@y.com", money: 8960})
-console.log(student3);
+
+//generic constraint with keyof operator
+
+type Vehicle = {
+  bike: string,
+  car: string,
+  ship: string
+}
+
+type Owner = "bike" | "car" | "ship";//manually key written
+type Owner1 = keyof Vehicle//dynamicaly key written
+
+//in function typeof
+const getPropertyValue = <X, Y extends keyof X>(obj:X, key:Y)=>{
+  return obj[key]
+}
+
+const result = getPropertyValue(student3, "money")
+
+//async typscript
+
+type Todo={
+  "userId": number,
+  "id": number,
+  "title": string,
+  "completed": string
+}
+const getTodo = async (): Promise<Todo> =>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+  const result: Todo = await res.json()
+  return result
+}
+
+//conditional types
+
+type CheckVehicle<T> = T extends keyof Vehicle ? true : false
+
+type HasPlan = CheckVehicle<"plain">
+
+//mapped types 
+
+type ArrayofSomething<T>= {
+  [key in keyof T]:T[key]
+}
+
+const something: ArrayofSomething<Todo> = {
+  userId: 234234,
+  id: 23424,
+  title: "something",
+  completed: "dont know"
+}
 
