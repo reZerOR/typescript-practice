@@ -242,7 +242,11 @@ const poorDeveloper: Developer3<{ brand: string; model: string }> = {
     model: "idk",
   },
 };
-const richDeveloper: Developer3<{ brand: string; model: string, releaseYear: string }> = {
+const richDeveloper: Developer3<{
+  brand: string;
+  model: string;
+  releaseYear: string;
+}> = {
   name: "name",
   computer: {
     brand: "hp",
@@ -252,13 +256,31 @@ const richDeveloper: Developer3<{ brand: string; model: string, releaseYear: str
   smartWatch: {
     brand: "apple watch",
     model: "idk",
-    releaseYear: "34415"
+    releaseYear: "34415",
   },
 };
 //generic type function
 
-const createArrayGeneric = <T>(pram: T): T[]=>{
-  return [pram]
-}
+const createArrayGeneric = <T>(pram: T): T[] => {
+  return [pram];
+};
 
-const resGeneric = createArrayGeneric<string>("hello")
+const resGeneric = createArrayGeneric<string>("hello");
+
+//constraints
+
+const addCourseToStudent = <
+  T extends { id: number; name: string; email: string }
+>(
+  student: T
+) => {
+  const course = "emni course";
+  return {
+    ...student,
+    course,
+  };
+};
+
+const student3 = addCourseToStudent({id: 2304, name: "jani na", email: "x@y.com", money: 8960})
+console.log(student3);
+
